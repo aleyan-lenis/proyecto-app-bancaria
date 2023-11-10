@@ -1,0 +1,30 @@
+<div class="container-xxl" width="100%" style="background-color: #3f51b5;">
+    <mat-toolbar color="primary">
+        <span>Grupo # 11</span>
+        <span *ngIf="isLoggedIn"> - Bienvenido, {{ userName }}</span>
+        <span class="example-spacer"></span>
+        <div [hidden]="!isLoggedIn">
+            <button mat-icon-button class="example-icon" aria-label="Página principal">
+                <mat-icon>home</mat-icon>
+            </button>
+        </div>
+        <div [hidden]="!isLoggedIn">
+            <button mat-icon-button class="example-icon" aria-label="Más información">
+                <mat-icon>info</mat-icon>
+            </button>
+        </div>
+        <div [hidden]="isLoggedIn">
+            <button mat-icon-button class="example-icon" aria-label="Iniciar sesión" (click)="openLogin()">
+                <mat-icon>account_box</mat-icon>
+            </button>
+        </div>
+        <div [hidden]="!isLoggedIn">
+            <button mat-icon-button class="example-icon" aria-label="Cerrar sesión" (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
+        </div>
+        <div class="button-agregar">
+            <button mat-raised-button color="accent" (click)="openDialogTransaction()">Realizar transaccion</button>
+        </div>
+    </mat-toolbar>
+</div>
